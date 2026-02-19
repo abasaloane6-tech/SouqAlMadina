@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>لوحة الادمن - سوق المدينة</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <h1>لوحة الادمن</h1>
+
+    <h2>المنتجات المنشورة</h2>
+
+    <div class="products">
+
+        {% for product in products %}
+        <div class="product">
+
+            <img src="/static/images/{{ product.image }}" alt="صورة">
+
+            <h3>{{ product.title }}</h3>
+
+            <p>السعر: {{ product.price }}</p>
+
+            <p>الهاتف: {{ product.phone }}</p>
+
+            <!-- زر الحذف -->
+            <a href="/delete/{{ product.id }}" class="delete-btn">
+                حذف
+            </a>
+
+        </div>
+        {% endfor %}
+
+    </div>
+
+    <br>
+    <a href="/">⬅ الرجوع للسوق</a>
+
+</body>
+</html>
