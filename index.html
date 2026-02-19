@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>سوق المدينة</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="banner">
+    <img src="/static/images/banner.jpg" alt="بنر الإعلان">
+</div>
+<h1>سوق المدينة</h1>
+<div class="products">
+    {% for product in products %}
+    <div class="product-card">
+        <img src="/static/images/{{ product[5] }}" alt="{{ product[2] }}">
+        <h3>{{ product[2] }}</h3>
+        <p>السعر: {{ product[3] }} د.ع</p>
+        <p>{{ product[4] }}</p>
+    </div>
+    {% endfor %}
+</div>
+<a href="/add" class="add-btn">➕ إضافة منتج</a>
+<a href="/admin" class="admin-btn">⚙️ لوحة الادمن</a>
+</body>
+</html>

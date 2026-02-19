@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>لوحة الادمن</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<h1>لوحة الادمن</h1>
+<div class="products">
+    {% for product in products %}
+    <div class="product-card">
+        <img src="/static/images/{{ product[5] }}" alt="{{ product[2] }}">
+        <h3>{{ product[2] }}</h3>
+        <p>السعر: {{ product[3] }} د.ع</p>
+        <p>{{ product[4] }}</p>
+        <a href="/delete/{{ product[0] }}" class="delete-btn">حذف</a>
+    </div>
+    {% endfor %}
+</div>
+<a href="/" class="back-btn">⬅ العودة للرئيسية</a>
+</body>
+</html>
