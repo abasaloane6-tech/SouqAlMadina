@@ -1,1 +1,17 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+    <title>لوحة الأدمن</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>لوحة تحكم الأدمن</h2>
+    <ul>
+        {% for product in products %}
+        <li>{{ product.name }} - {{ product.price }} IQD 
+            <button>حذف</button>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
