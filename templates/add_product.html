@@ -1,1 +1,19 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+    <title>إضافة منتج</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>أضف منتج جديد</h2>
+    <form action="/add" method="POST">
+        <label>اسم المنتج:</label>
+        <input type="text" name="name" required><br>
+        <label>السعر:</label>
+        <input type="number" name="price" required><br>
+        <label>اسم الصورة:</label>
+        <input type="text" name="image" placeholder="مثال: product1.jpg" required><br>
+        <button type="submit">أضف المنتج</button>
+    </form>
+</body>
+</html>
