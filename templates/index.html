@@ -1,1 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>سوق المدينة</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='images/banner.jpg') }}" alt="Banner" class="banner">
+        <h1>سوق المدينة</h1>
+    </header>
 
+    <section class="products">
+        {% for product in products %}
+        <div class="product">
+            <img src="{{ url_for('static', filename='images/' + product.image) }}" alt="{{ product.name }}">
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.price }} IQD</p>
+        </div>
+        {% endfor %}
+    </section>
+
+    <footer>
+        <p>© 2026 سوق المدينة</p>
+    </footer>
+</body>
+</html>
